@@ -63,7 +63,7 @@
           id="navbarCollapse"
         >
           <div class="navbar-nav font-weight-bold mx-auto py-0">
-            <a href="home" class="nav-item nav-link @yield ('home')">Home</a>
+            <a href="home" class="nav-item nav-link @yield ('home')">Beranda</a>
             <a href="about" class="nav-item nav-link @yield ('about')">About</a>
             <a href="class" class="nav-item nav-link @yield ('class')">Classes</a>
             <a href="teachers" class="nav-item nav-link @yield ('teachers')">Teachers</a>
@@ -80,9 +80,33 @@
                 <a href="single" class="dropdown-item">Blog Detail</a>
               </div>
             </div>
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle @yield('edit')"
+                data-toggle="dropdown"
+                >{{ Auth::user()->name }}</a
+              >
+              <div class="dropdown-menu rounded-0 m-0">
+                        <x-dropdown-link :href="route('profile.edit')" class="dropdown-item">
+                            {{ __('Informasi Akun') }}
+                        </x-dropdown-link>
+
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout') "
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="dropdown-item">
+                                {{ __('Keluar') }}
+                            </x-dropdown-link>
+                        </form>
+              </div>
+            </div>
             <a href="contact" class="nav-item nav-link @yield('contact')">Contact</a>
           </div>
-          <a href="{{url('login')}}" class="btn btn-primary px-4">Login</a>
+          <!-- <a href="{{url('dashboard')}}" class="btn btn-primary px-4">Login</a> -->
         </div>
       </nav>
     </div>
