@@ -1,6 +1,6 @@
 @extends ('frontend.master')
 @section ('content')
-@section ('pages', 'active')
+@section ('kajian', 'active')
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">

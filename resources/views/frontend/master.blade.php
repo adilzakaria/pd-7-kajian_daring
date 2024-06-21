@@ -39,54 +39,23 @@
 
 <!-- Navbar Start -->
 <div class="container-fluid bg-light position-relative shadow">
-      <nav
-        class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5"
-      >
-        <a
-          href=""
-          class="navbar-brand font-weight-bold text-secondary"
-          style="font-size: 50px"
-        >
+      <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0 px-lg-5">
+        <a href="" class="navbar-brand font-weight-bold text-secondary" style="font-size: 50px">
           <i class="flaticon-043-teddy-bear"></i>
-          <span class="text-primary">KidKinder</span>
+          <span class="text-primary">Kajian Daring</span>
         </a>
-        <button
-          type="button"
-          class="navbar-toggler"
-          data-toggle="collapse"
-          data-target="#navbarCollapse"
-        >
+        <button type="button" class="navbar-toggler"  data-toggle="collapse" data-target="#navbarCollapse">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div
-          class="collapse navbar-collapse justify-content-between"
-          id="navbarCollapse"
-        >
-          <div class="navbar-nav font-weight-bold mx-auto py-0">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav font-weight-bold ml-auto py-0">
             <a href="home" class="nav-item nav-link @yield ('home')">Beranda</a>
-            <a href="about" class="nav-item nav-link @yield ('about')">About</a>
-            <a href="class" class="nav-item nav-link @yield ('class')">Classes</a>
-            <a href="teachers" class="nav-item nav-link @yield ('teachers')">Teachers</a>
-            <a href="gallery" class="nav-item nav-link @yield ('gallery')">Gallery</a>
+            <a href="blog" class="nav-item nav-link @yield ('kajian')">Kajian</a>
+            <a href="contact" class="nav-item nav-link @yield('contact') mr-4">Hubungi Kami</a>
             <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle @yield('pages')"
-                data-toggle="dropdown"
-                >Pages</a
-              >
-              <div class="dropdown-menu rounded-0 m-0">
-                <a href="blog" class="dropdown-item">Blog Grid</a>
-                <a href="single" class="dropdown-item">Blog Detail</a>
-              </div>
-            </div>
-            <div class="nav-item dropdown">
-              <a
-                href="#"
-                class="nav-link dropdown-toggle @yield('edit')"
-                data-toggle="dropdown"
-                >{{ Auth::user()->name }}</a
-              >
+              <a href="#" class="nav-link dropdown-toggle @yield('edit') mr-4" data-toggle="dropdown">
+                Hai, {{ Auth::user()->name }}
+              </a>
               <div class="dropdown-menu rounded-0 m-0">
                         <x-dropdown-link :href="route('profile.edit')" class="dropdown-item">
                             {{ __('Informasi Akun') }}
@@ -104,7 +73,6 @@
                         </form>
               </div>
             </div>
-            <a href="contact" class="nav-item nav-link @yield('contact')">Contact</a>
           </div>
           <!-- <a href="{{url('dashboard')}}" class="btn btn-primary px-4">Login</a> -->
         </div>
@@ -185,25 +153,16 @@
           </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-5">
-          <h3 class="text-primary mb-4">Quick Links</h3>
+          <h3 class="text-primary mb-4">Tautan Cepat</h3>
           <div class="d-flex flex-column justify-content-start">
             <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Home</a
+              ><i class="fa fa-angle-right mr-2"></i>Beranda</a
             >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>About Us</a
+            <a class="text-white mb-2" href="blog"
+              ><i class="fa fa-angle-right mr-2"></i>Kajian</a
             >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Classes</a
-            >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Teachers</a
-            >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Blog</a
-            >
-            <a class="text-white" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
+            <a class="text-white mb-2" href="profile"
+              ><i class="fa fa-angle-right mr-2"></i>Informasi Akun</a
             >
           </div>
         </div>

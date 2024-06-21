@@ -69,3 +69,10 @@ Route::get('/single', function () {
 Route::get('/contact', function () {
     return view('frontend.contact');
 })->middleware(['auth', 'verified']);
+
+Route::get('/dash', function () {
+    return view('admin.dash');
+});
+Route::get('/form', function () {
+    return view('admin.form');
+});

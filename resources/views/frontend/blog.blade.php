@@ -1,6 +1,6 @@
 @extends ('frontend.master')
 @section ('content')
-@section ('pages', 'active')
+@section ('kajian', 'active')
 
     <!-- Header Start -->
     <div class="container-fluid bg-primary mb-5">
@@ -23,9 +23,9 @@
       <div class="container">
         <div class="text-center pb-2">
           <p class="section-title px-5">
-            <span class="px-2">Latest Blog</span>
+            <span class="px-2">Kajian Terbaru</span>
           </p>
-          <h1 class="mb-4">Latest Articles From Blog</h1>
+          <h1 class="mb-4">Kajian Terbaru yang Diunggah</h1>
         </div>
         <div class="row pb-3">
           <div class="col-lg-4 mb-4">
