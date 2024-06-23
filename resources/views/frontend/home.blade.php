@@ -34,33 +34,32 @@
           <h1 class="mb-4">Jenis Kajian yang Tersedia</h1>
         </div>
         <div class="row">
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px">
               <i class="flaticon-050-fence h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Khusus Anak Muda</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Membahas isu-isu yang relevan dan menarik bagi generasi muda, membantu mereka mengembangkan keterampilan dan 
+                pengetahuan yang dibutuhkan untuk sukses di masa depan.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-022-drum h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Tafsir Al-Qur'an</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Menggali makna mendalam dari ayat-ayat Al-Qur'an, dipandu oleh ulama terkemuka dengan pendekatan yang mudah dipahami.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div
               class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
@@ -68,39 +67,48 @@
               <div class="pl-4">
                 <h4>Kajian Hadis</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Memahami ajaran dan pesan dari hadis-hadis penting dalam Islam, serta bagaimana mengaplikasikannya dalam kehidupan sehari-hari.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Fiqih</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Menyediakan pengetahuan tentang hukum-hukum Islam, membantu peserta memahami dan menjalankan ajaran Islam dengan benar.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
+            <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
+              style="padding: 30px" >
+              <i class="flaticon-017-toy-car h1 font-weight-normal text-primary mb-3"></i>
+              <div class="pl-4">
+                <h4>Kajian Akidah</h4>
+                <p class="m-0">
+                Menyediakan pengetahuan tentang hukum-hukum Islam, membantu peserta memahami dan menjalankan ajaran Islam dengan benar.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-025-sandwich h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Tasawuf</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Mengeksplorasi konsep-konsep spiritual dalam Islam, membantu peserta mencapai kedekatan dengan Allah dan meningkatkan kualitas ibadah mereka.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
@@ -113,41 +121,38 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Politik Islam</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Membahas prinsip-prinsip politik dalam Islam dan bagaimana mereka dapat diterapkan dalam konteks modern.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Budaya Islam</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                  Menjelajahi budaya-budaya Islam yang berkembang di berbagai belahan dunia, memperkaya pengetahuan peserta tentang keragaman dalam Islam.
                 </p>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 pb-1">
+          <div class="col-lg-6 col-md-6 pb-1">
             <div class="d-flex bg-light shadow-sm border-top rounded mb-4"
               style="padding: 30px" >
               <i class="flaticon-047-backpack h1 font-weight-normal text-primary mb-3"></i>
               <div class="pl-4">
                 <h4>Kajian Lingkungan</h4>
                 <p class="m-0">
-                  Kasd labore kasd et dolor est rebum dolor ut, clita dolor vero
-                  lorem amet elitr vero...
+                Mengajarkan pandangan Islam tentang pelestarian lingkungan dan tanggung jawab kita sebagai umat manusia terhadap alam.
                 </p>
               </div>
             </div>

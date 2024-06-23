@@ -14,22 +14,13 @@
                   </p>
                   <form class="form" method="POST" action="" enctype="multipart/form-data">
                   @csrf
-                  <div class="form-group row">
-                    <label for="kajianTitle" class="col-sm-2 col-form-label">Judul Kajian</label>
-                    <div class="col-sm-10">
-                      <input type="text" class="form-control" id="kajianTitle" name="title" placeholder="Judul Kajian" required>
-                    </div>
-                  </div>
-                  <div class="form-group row">
-                    <label for="kajianDescription" class="col-sm-2 col-form-label">Deskripsi</label>
-                    <div class="col-sm-10">
-                      <textarea type="textarea" class="form-control" id="kajianDescription" name="description" placeholder="Deskripsi" style="height: 10rem;" required ></textarea>
-                    </div>
-                  </div>
+
+                  <!-- input kategori -->
+
                   <div class="form-group row">
                     <label for="kajianCategory" class="col-sm-2 col-form-label">Kategori</label>
                     <div class="col-sm-10">
-                      <select class="form-control" id="kajianCategory" name="category" required>
+                      <select class="form-control" id="kajianCategory" name="category" style="height: 3rem;" required>
                         <option value="" disabled selected>Pilih Kategori</option>
                         <option value="anak_muda">Kajian Anak Muda</option>
                         <option value="tafsir_alquran">Tafsir Al-Quran</option>
@@ -44,18 +35,34 @@
                       </select>
                     </div>
                   </div>
+
+                  <!-- input kajian -->
+                  
                   <div class="form-group row">
-                    <label for="kajianThumbnail" class="col-sm-2 col-form-label">Thumbnail</label>
+                    <label for="kajianTitle" class="col-sm-2 col-form-label">Judul Kajian</label>
                     <div class="col-sm-10">
-                      <input type="file" class="form-control" id="kajianThumbnail" name="thumbnail" required>
+                      <input type="text" class="form-control" id="kajianTitle" name="title" placeholder="Judul Kajian" style="height: 3rem;" required>
                     </div>
                   </div>
+
+                  <!-- input deskripsi -->
+                  
+                  <div class="form-group row">
+                    <label for="kajianDescription" class="col-sm-2 col-form-label">Deskripsi</label>
+                    <div class="col-sm-10">
+                      <textarea type="textarea" class="form-control" id="kajianDescription" name="description" placeholder="Deskripsi" style="height: 10rem;" required ></textarea>
+                    </div>
+                  </div>
+
+                  <!-- input file -->
+                  
                   <div class="form-group row">
                     <label for="kajianFile" class="col-sm-2 col-form-label">File Kajian</label>
                     <div class="col-sm-10">
-                      <input type="file" class="form-control" id="kajianFile" name="file" required>
+                      <input type="file" class="form-control" id="kajianFile" name="file" style="height: 3rem;" required>
                     </div>
                   </div>
+
                     <div class="btn-wrapper ">
                       <a href="#" class="btn btn-danger text-white"><i class="icon-printer"></i> Delete</a>
                       <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Upload</a>

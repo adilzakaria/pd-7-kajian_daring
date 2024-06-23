@@ -1,22 +1,6 @@
 @extends ('frontend.master')
 @section ('content')
-@section ('kajian', 'active')
-
-    <!-- Header Start -->
-    <div class="container-fluid bg-primary mb-5">
-      <div
-        class="d-flex flex-column align-items-center justify-content-center"
-        style="min-height: 400px"
-      >
-        <h3 class="display-3 font-weight-bold text-white">Our Blog</h3>
-        <div class="d-inline-flex text-white">
-          <p class="m-0"><a class="text-white" href="">Home</a></p>
-          <p class="m-0 px-2">/</p>
-          <p class="m-0">Our Blog</p>
-        </div>
-      </div>
-    </div>
-    <!-- Header End -->
+@section ('study', 'active')
 
     <!-- Blog Start -->
     <div class="container-fluid pt-5">
@@ -27,21 +11,44 @@
           </p>
           <h1 class="mb-4">Kajian Terbaru yang Diunggah</h1>
         </div>
+        <label for="">Filter Pencarian</label>
+        <div class="form-group">
+          <select class="form-control" id="kajianCategory" name="category" required>
+            <option value="" disabled selected>Waktu</option>
+            <option value="">Paling Awal</option>
+            <option value="">Paling Akhir</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select class="form-control" id="kajianCategory" name="category" required>
+            <option value="" disabled selected>Pilih Kategori</option>
+            <option value="anak_muda">Kajian Anak Muda</option>
+            <option value="tafsir_alquran">Tafsir Al-Quran</option>
+            <option value="hadis">Hadis</option>
+            <option value="fiqih">Fiqih</option>
+            <option value="Akidah">Akidah</option>
+            <option value="tasawuf">Tasawuf</option>
+            <option value="sejarah">Sejarah Islam</option>
+            <option value="politik">Politik Islam</option>
+            <option value="budaya">Budaya Islam</option>
+            <option value="lingkungan">Lingkungan</option>
+          </select>
+        </div>
         <div class="row pb-3">
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-1.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -49,7 +56,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="content" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>
@@ -59,16 +66,16 @@
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-2.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -76,7 +83,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="single" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>
@@ -86,16 +93,16 @@
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-3.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -103,7 +110,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="single" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>
@@ -113,16 +120,16 @@
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-1.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -130,7 +137,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="single" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>
@@ -140,16 +147,16 @@
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-2.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -157,7 +164,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="single" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>
@@ -167,16 +174,16 @@
             <div class="card border-0 shadow-sm mb-2">
               <img class="card-img-top mb-2" src="assets/img/blog-3.jpg" alt="" />
               <div class="card-body bg-light text-center p-4">
-                <h4 class="">Diam amet eos at no eos</h4>
+                <h4 class="">Judul Kajian</h4>
                 <div class="d-flex justify-content-center mb-3">
                   <small class="mr-3"
                     ><i class="fa fa-user text-primary"></i> Admin</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-folder text-primary"></i> Web Design</small
+                    ><i class="fa fa-folder text-primary"></i> Kategori</small
                   >
                   <small class="mr-3"
-                    ><i class="fa fa-comments text-primary"></i> 15</small
+                    ><i class="fa fa-clock text-primary"></i> Date</small
                   >
                 </div>
                 <p>
@@ -184,7 +191,7 @@
                   eirmod, duo et sed sit eirmod kasd clita tempor dolor stet
                   lorem. Tempor ipsum justo amet stet...
                 </p>
-                <a href="" class="btn btn-primary px-4 mx-auto my-2"
+                <a href="single" class="btn btn-primary px-4 mx-auto my-2"
                   >Read More</a
                 >
               </div>

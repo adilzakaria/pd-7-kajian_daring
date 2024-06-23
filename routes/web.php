@@ -22,9 +22,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::get('/home', function () {
-//     return view('frontend.home');
-// })->middleware(['auth', 'verified']);
+// ROUTE USER
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,37 +36,19 @@ Route::get('/home', function () {
     return view('frontend.home');
 })->middleware(['auth', 'verified']);
 
-Route::get('/about', function () {
-    return view('frontend.about');
+Route::get('/study', function () {
+    return view('frontend.study');
 })->middleware(['auth', 'verified']);
 
-Route::get('/class', function () {
-    return view('frontend.class');
-})->middleware(['auth', 'verified']);
-
-Route::get('/teachers', function () {
-    return view('frontend.teachers');
-})->middleware(['auth', 'verified']);
-
-Route::get('/gallery', function () {
-    return view('frontend.gallery');
-})->middleware(['auth', 'verified']);
-
-Route::get('/pages', function () {
-    return view('frontend.pages');
-})->middleware(['auth', 'verified']);
-
-Route::get('/blog', function () {
-    return view('frontend.blog');
-})->middleware(['auth', 'verified']);
-
-Route::get('/single', function () {
-    return view('frontend.single');
+Route::get('/content', function () {
+    return view('frontend.content');
 })->middleware(['auth', 'verified']);
 
 Route::get('/contact', function () {
     return view('frontend.contact');
 })->middleware(['auth', 'verified']);
+
+// ROUTE ADMIN
 
 Route::get('/dash', function () {
     return view('admin.dash');
