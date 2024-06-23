@@ -60,8 +60,22 @@
                 <p class="mb-1 mt-3 font-weight-semibold">Admin</p>
                 <p class="fw-light text-muted mb-0">admin@gmail.com</p>
               </div>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-account-outline text-primary me-2"></i> My Profile></a>
-              <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Keluar</a>
+              <div class="dropdown-item mdi mdi-home">
+              <x-dropdown-link :href="url('/home')" class="dropdown-item">
+                                {{ __('Beranda') }}
+                            </x-dropdown-link>
+              </div>
+              <div class="dropdown-item mdi mdi-power">
+              <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout') "
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();" class="dropdown-item">
+                                {{ __('Keluar') }}
+                            </x-dropdown-link>
+                </form>
+                </div>
             </div>
           </li>
         </ul>

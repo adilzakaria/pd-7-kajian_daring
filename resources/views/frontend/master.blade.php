@@ -57,9 +57,17 @@
                 Hai, {{ Auth::user()->name }}
               </a>
               <div class="dropdown-menu rounded-0 m-0">
+                        @role('user')
                         <x-dropdown-link :href="route('profile.edit')" class="dropdown-item">
                             {{ __('Informasi Akun') }}
                         </x-dropdown-link>
+                        @endrole
+
+                        @role('admin')
+                            <x-dropdown-link :href="url('/dash')" class="dropdown-item">
+                                {{ __('Dashboard Admin') }}
+                            </x-dropdown-link>
+                        @endrole
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">

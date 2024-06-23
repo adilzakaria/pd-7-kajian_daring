@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StudyController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +26,15 @@ Route::get('/dashboard', function () {
 
 // ROUTE USER
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'verified', 'role::user')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+// Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit')->middleware(['auth', 'verified', 'role::user']);
+// Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware(['auth', 'verified', 'role::user']);
+// Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy')->middleware(['auth', 'verified', 'role::user']);
 
 require __DIR__.'/auth.php';
 
@@ -36,9 +42,7 @@ Route::get('/home', function () {
     return view('frontend.home');
 })->middleware(['auth', 'verified']);
 
-Route::get('/study', function () {
-    return view('frontend.study');
-})->middleware(['auth', 'verified']);
+Route::get('/study', [StudyController::class, 'show'])->middleware(['auth', 'verified'])->name('show');
 
 Route::get('/content', function () {
     return view('frontend.content');
@@ -50,9 +54,15 @@ Route::get('/contact', function () {
 
 // ROUTE ADMIN
 
-Route::get('/dash', function () {
-    return view('admin.dash');
+// Routes for admin
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+    Route::get('/dash', function () {
+        return view('admin.dash');
+    });
+
+    Route::get('/form', [AdminController::class, 'create'])->name('create');
+    Route::post('/form', [AdminController::class, 'store'])->name('store');
 });
-Route::get('/form', function () {
-    return view('admin.form');
-});
+// Route::get('/form', function () {
+//     return view('admin.form');
+// });

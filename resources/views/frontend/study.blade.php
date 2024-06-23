@@ -21,17 +21,10 @@
         </div>
         <div class="form-group">
           <select class="form-control" id="kajianCategory" name="category" required>
-            <option value="" disabled selected>Pilih Kategori</option>
-            <option value="anak_muda">Kajian Anak Muda</option>
-            <option value="tafsir_alquran">Tafsir Al-Quran</option>
-            <option value="hadis">Hadis</option>
-            <option value="fiqih">Fiqih</option>
-            <option value="Akidah">Akidah</option>
-            <option value="tasawuf">Tasawuf</option>
-            <option value="sejarah">Sejarah Islam</option>
-            <option value="politik">Politik Islam</option>
-            <option value="budaya">Budaya Islam</option>
-            <option value="lingkungan">Lingkungan</option>
+            <option value="" disabled selected>Pilih Kategori</option>  
+            @foreach($categories as $categorys)
+              <option value="{{ $categorys->id }}">{{ $categorys->nama_kategori }}</option>
+            @endforeach
           </select>
         </div>
         <div class="row pb-3">

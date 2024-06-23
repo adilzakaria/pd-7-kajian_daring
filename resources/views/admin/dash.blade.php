@@ -12,7 +12,7 @@
                     <img src="admin/assets/images/faces/face8.jpg" class="card-img-top rounded-circle" alt="Admin Profile Picture" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                   <div class="card-body text-center">
-                    <h4 class="card-title">Nama Admin</h4>
+                    <h4 class="card-title">{{ Auth::user()->name }}</h4>
                     <p class="card-text">Administrator</p>
                   </div>
                   <div class="card-body">
@@ -21,13 +21,13 @@
                     <div class="form-group row">
                       <label for="adminName" class="col-sm-3 col-form-label">Nama</label>
                       <div class="col-sm-9">
-                        <input type="text" readonly class="form-control-plaintext" id="adminName" value="Nama Admin">
+                        <input type="text" readonly class="form-control-plaintext" id="adminName" value="{{ Auth::user()->name }}">
                       </div>
                     </div>
                     <div class="form-group row">
                       <label for="adminEmail" class="col-sm-3 col-form-label">Email</label>
                       <div class="col-sm-9">
-                        <input type="text" readonly class="form-control-plaintext" id="adminEmail" value="admin@example.com">
+                        <input type="text" readonly class="form-control-plaintext" id="adminEmail" value="{{ Auth::user()->email }}">
                       </div>
                     </div>
                 </div>
