@@ -42,7 +42,8 @@ Route::get('/home', function () {
     return view('frontend.home');
 })->middleware(['auth', 'verified']);
 
-Route::get('/study', [StudyController::class, 'show'])->middleware(['auth', 'verified'])->name('show');
+Route::get('/study', [StudyController::class, 'kajian'])->middleware(['auth', 'verified'])->name('kajian');
+Route::get('/study/{id}', [StudyController::class, 'showkajian'])->middleware(['auth', 'verified'])->name('showkajian');
 
 Route::get('/content', function () {
     return view('frontend.content');

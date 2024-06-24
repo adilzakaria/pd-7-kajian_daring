@@ -8,7 +8,7 @@
     <meta content="Free HTML Templates" name="description" />
 
     <!-- Favicon -->
-    <link href="assets/img/favicon.ico" rel="icon" />
+    <link href="{{ asset('assets/img/favicon.ico') }}" rel="icon" />
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -24,15 +24,15 @@
     />
 
     <!-- Flaticon Font -->
-    <link href="assets/lib/flaticon/font/flaticon.css" rel="stylesheet" />
+    <link href="{{ asset('assets/lib/flaticon/font/flaticon.css') }}" rel="stylesheet" />
 
     <!-- Libraries Stylesheet -->
-    <link href="asseets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/style.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" />
+    <link href="{{ asset('assets/css/style.min.css') }}" rel="stylesheet" />
   </head>
 
   <body>
@@ -188,7 +188,7 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="assets/js/main.js"></script>
+    <script src="{{ asset('assets/js/main.js')}}"></script>
     
     </body>
 </html>

@@ -157,6 +157,7 @@
               </div>
             </div>
           </div>
+          <a href="study" class="btn btn-primary px-4 mx-auto my-2">Lihat Kajian</a>
         </div>
       </div>
     </div>

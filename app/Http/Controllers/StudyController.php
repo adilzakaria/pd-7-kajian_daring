@@ -8,12 +8,34 @@ use App\Models\Study;
 
 class StudyController extends Controller
 {
-    public function show()
+    public function kajian(Request $request)
     {
-        // Ambil semua kategori dari database
-        $categories = Category::all();
+        // Mengambil semua data studys
+        // $studies = Study::with('category')->get();
         
-        // Kirim data kategori ke view
-        return view('frontend.study', compact('categories'));
+        // Mengambil semua kategori
+        $categories = Category::all();
+
+        // Default sorting
+        $orderBy = 'created_at';
+        $orderDirection = 'desc';
+
+        // Check if sorting is requested
+        if ($request->has('order')) {
+            $orderDirection = $request->order === 'asc' ? 'asc' : 'desc';
+        }
+
+        // Mengambil semua data studys dengan pengurutan
+        $studies = Study::with('category')
+                        ->orderBy($orderBy, $orderDirection)
+                        ->get();
+        
+        // Mengirim data ke view
+        return view('frontend.study', compact('studies', 'categories','orderDirection'));
+    }
+
+    public function showkajian($id){
+        $study = Study::with('category')->findOrFail($id);
+        return view('frontend.content', compact('study'));
     }
 }
