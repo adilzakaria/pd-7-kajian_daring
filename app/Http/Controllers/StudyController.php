@@ -28,7 +28,7 @@ class StudyController extends Controller
         // Mengambil semua data studys dengan pengurutan
         $studies = Study::with('category')
                         ->orderBy($orderBy, $orderDirection)
-                        ->get();
+                        ->paginate(6);
         
         // Mengirim data ke view
         return view('frontend.study', compact('studies', 'categories','orderDirection'));

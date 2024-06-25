@@ -63,6 +63,16 @@ Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
 
     Route::get('/form', [AdminController::class, 'create'])->name('create');
     Route::post('/form', [AdminController::class, 'store'])->name('store');
+
+    // melihat tabel kajian
+    Route::get('/table', [AdminController::class, 'table'])->name('table');
+
+    // masuk ke halaman edit sesuai id
+    Route::get('/table/{id}', [AdminController::class, 'edit'])->name('edit');
+
+    // mulai edit dan update sesuai id
+    Route::get('/edit/{id}', [AdminController::class, 'edit_id'])->name('edit_id');
+    Route::put('/update/{id}', [AdminController::class, 'update'])->name('update');
 });
 // Route::get('/form', function () {
 //     return view('admin.form');

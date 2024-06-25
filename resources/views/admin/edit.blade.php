@@ -2,30 +2,30 @@
 @section ('content')
 
 <!-- partial -->
-<div class="main-panel">        
+<div class="main-panel">
+      <div class="btn-wrapper ">
+        <a href="{{route('table')}}" class="btn btn-secondary text-danger me-0"><i class="icon-back"></i><-</a>
+      </div>     
         <div class="content-wrapper">
           <div class="row">
             <div class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Formulir Unggah Kajian</h4>
+                  <h4 class="card-title">Edit Kajian</h4>
                   <p class="card-description">
-                    Gunakan formulir ini untuk mengunggah kajian baru.
+                    Gunakan formulir ini untuk mengganti judul, deskripsi dan ketegori kajian.
                   </p>
-                  <form class="form" method="POST" action="{{route('store')}}" enctype="multipart/form-data">
+                  <form class="form" method="POST" action="{{route('update',$study->id)}}" enctype="multipart/form-data">
+
                   @csrf
+                  @method('PUT')
 
                   <!-- input kategori -->
 
                   <div class="form-group row">
                     <label for="categorys" class="col-sm-2 col-form-label">Kategori</label>
                     <div class="col-sm-10">
-                      <select class="form-control" id="categorys" name="category" style="height: 3rem;" required>
-                        <option value="" disabled selected>Pilih Kategori</option>
-                        @foreach($categories as $categorys)
-                          <option value="{{ $categorys->id }}">{{ $categorys->nama_kategori }}</option>
-                        @endforeach
-                      </select>
+                        <input class="form-control " value="{{ $study->category->nama_kategori }}" disabled selected style="width:auto">
                     </div>
                   </div>
 
@@ -34,7 +34,7 @@
                   <div class="form-group row">
                     <label for="categorys" class="col-sm-2 col-form-label">Nama Penerbit</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="nama" name="nama" placeholder="Nama Penerbit" style="height: 3rem;" required>
+                      <input name="nama" id="nama" class="form-control" value="{{ $study->nama }}" disabled selected style="width:auto">
                     </div>
                   </div>
 
@@ -43,7 +43,7 @@
                   <div class="form-group row">
                     <label for="judul" class="col-sm-2 col-form-label">Judul Kajian</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul Kajian" style="height: 3rem;" required>
+                      <input name="judul" id="judul" class="form-control form-control-dynamic" value="{{ $study->judul }}" style="width:auto">
                     </div>
                   </div>
 
@@ -52,8 +52,8 @@
                   <div class="form-group row">
                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                      <textarea type="textarea" class="form-control" id="deskripsi" name="deskripsi" placeholder="Deskripsi" style="height: 10rem;" required ></textarea>
-                    </div>
+                      <input name="deskripsi" id="deskripsi" class="form-control form-control-dynamic" value="{{ Str::limit($study->deskripsi,50) }}" style="width:auto">
+                  </div>
                   </div>
 
                   <!-- input file -->
@@ -66,8 +66,7 @@
                   </div>
 
                     <div class="btn-wrapper ">
-                      <a href="#" class="btn btn-danger text-white"><i class="icon-printer"></i> Delete</a>
-                      <button type="submit" class="btn btn-primary text-white me-0"><i class="icon-upload"></i> Upload</button>
+                      <button type="submit" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Simpan</button>
                     </div>
                 </form>
                 </div>
@@ -75,5 +74,23 @@
             </div>
           </div>
         </div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dynamicInputs = document.querySelectorAll('.form-control-dynamic');
+
+            dynamicInputs.forEach(input => {
+                resizeInput.call(input); // Initial resize based on value length
+
+                input.addEventListener('focus', resizeInput);
+                input.addEventListener('input', resizeInput);
+
+                function resizeInput() {
+                    const length = this.value.length;
+                    this.style.width = ((length + 1) * 8) + 'px';
+                }
+            });
+        });
+        </script>
 
 @endsection

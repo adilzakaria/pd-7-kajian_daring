@@ -17,23 +17,26 @@
                   </div>
                   <div class="card-body">
                     <h4 class="card-title">Profil Admin</h4>
-                    <p class="card-description">Informasi mengenai profil admin.</p>
-                    <div class="form-group row">
-                      <label for="adminName" class="col-sm-3 col-form-label">Nama</label>
-                      <div class="col-sm-9">
-                        <input type="text" readonly class="form-control-plaintext" id="adminName" value="{{ Auth::user()->name }}">
-                      </div>
+                    <div class="form-group row mb-3">
+                        <label for="adminName" class="col-sm-3 col-form-label">Nama</label>
+                        <div class="col-sm-9">
+                          <input type="text" readonly class="form-control-plaintext" id="adminName" value="{{ Auth::user()->name }}">
+                        </div>
                     </div>
-                    <div class="form-group row">
-                      <label for="adminEmail" class="col-sm-3 col-form-label">Email</label>
-                      <div class="col-sm-9">
-                        <input type="text" readonly class="form-control-plaintext" id="adminEmail" value="{{ Auth::user()->email }}">
-                      </div>
+                    <div class="form-group row mb-3">
+                        <label for="adminEmail" class="col-sm-3 col-form-label">Email</label>
+                        <div class="col-sm-9">
+                          <input type="text" readonly class="form-control-plaintext" id="adminEmail" value="{{ Auth::user()->email }}">
+                        </div>
                     </div>
                 </div>
-              </div>
             </div>
+              <div class="card-footer text-center">
+                      <a href="form" class="btn btn-secondary text-primary">Form Unggah</a>
+                      <a href="table" class="btn btn-secondary text-success">Lihat Kajian</a>
+              </div>
           </div>
-        </div>
+    </div>
+</div>
 
 @endsection

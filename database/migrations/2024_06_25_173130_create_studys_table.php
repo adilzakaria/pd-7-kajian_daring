@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('nama');
             $table->string('judul');
             $table->text('deskripsi');
-            $table->string('file');
+            $table->string('file')->nullable();
             $table->timestamps();
 
             // Set foreign key constraint
-            $table->foreign('id')->references('id')->on('categorys')->onDelete('cascade');
+            $table->foreign('id_kategori')->references('id')->on('categorys')->onDelete('cascade');
         });
     }
 

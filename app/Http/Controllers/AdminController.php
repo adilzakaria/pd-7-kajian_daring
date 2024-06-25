@@ -24,9 +24,11 @@ class AdminController extends Controller
             'nama' => 'required|string|max:255',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'file' => 'required|file|mimes:pdf,doc,docx,txt|max:3048',
+            'file' => 'nullable|file|mimes:pdf,doc,docx,txt|max:3048',
         ]);
-        $filePath = $request->file('file')->store('study_files');
+        // $filePath = $request->file('file')->store('study_files');
+
+        // dd($request->all());
 
         // Study::create([
         //     'id' => $validatedData['category'],
@@ -49,6 +51,50 @@ class AdminController extends Controller
         }
         $study->save();
         
-        return redirect()->route('store')->with('success', 'Kajian berhasil ditambahkan');
+        return redirect()->route('table')->with('success', 'Kajian berhasil ditambahkan');
+    }
+
+    public function table(Request $request){
+
+        // Query dasar untuk mengambil data studys dengan relasi category
+        $query = Study::with('category');
+
+        // Menambahkan fitur pencarian
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('judul', 'like', "%{$search}%")
+                ->orWhere('nama', 'like', "%{$search}%");
+    }
+
+        // Mengambil semua data studys
+        $studies = Study::with('category')->paginate(5);
+
+        // Mengambil semua kategori
+        $categories = Category::all();
+
+        // Mengirim data ke view
+        return view('admin.table', compact('studies', 'categories'));
+    }
+
+    public function edit($id)
+    {
+        $study = Study::with('category')->findOrFail($id);
+        return view('admin.edit', compact('study'));
+    }
+
+    public function update(Request $request, $id)
+    {
+
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'deskripsi' => 'required|string',
+        ]);
+
+        $study = Study::findOrFail($id);
+        $study->judul = $request->input('judul');
+        $study->deskripsi = $request->input('deskripsi');
+        $study->save();
+
+        return redirect()->route('table')->with('success', 'Kajian berhasil diperbarui!');
     }
 }
