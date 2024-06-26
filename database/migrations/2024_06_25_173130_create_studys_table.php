@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('studys', function (Blueprint $table) {
+        Schema::create('study', function (Blueprint $table) {
             $table->id(); // Kolom id sebagai primary key
             $table->foreignId('id_kategori')->constrained('categorys')->onDelete('cascade');
             // $table->unsignedBigInteger('id_kategori');
@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('judul');
             $table->text('deskripsi');
             $table->string('file')->nullable();
+            $table->string('gambar')->nullable();
             $table->timestamps();
 
             // Set foreign key constraint
@@ -31,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('studys');
+        Schema::dropIfExists('study');
     }
 };

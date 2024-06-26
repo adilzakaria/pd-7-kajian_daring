@@ -52,7 +52,7 @@
                   <div class="form-group row">
                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                      <input name="deskripsi" id="deskripsi" class="form-control form-control-dynamic" value="{{ Str::limit($study->deskripsi,50) }}" style="width:auto">
+                      <input name="deskripsi" id="deskripsi" class="form-control form-control-dynamic" value="{{ ($study->deskripsi) }}" style="width:auto">
                   </div>
                   </div>
 

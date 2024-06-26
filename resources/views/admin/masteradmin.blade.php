@@ -65,7 +65,7 @@
               <div class="dropdown-header text-center">
                 <img class="img-md rounded-circle" src="admin/assets/images/faces/face8.jpg" alt="Profile image">
                 <p class="mb-1 mt-3 font-weight-semibold">Admin</p>
-                <p class="fw-light text-muted mb-0">{{ Auth::user()->name }}</p>
+                <p class="fw-light text-muted mb-0">{{ Auth::user()->email }}</p>
               </div>
               <div class="dropdown-item mdi mdi-home">
               <x-dropdown-link :href="url('/home')" class="dropdown-item">

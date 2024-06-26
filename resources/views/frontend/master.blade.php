@@ -49,9 +49,9 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
           <div class="navbar-nav font-weight-bold ml-auto py-0">
-            <a href="home" class="nav-item nav-link @yield ('home')">Beranda</a>
-            <a href="study" class="nav-item nav-link @yield ('study')">Kajian</a>
-            <a href="contact" class="nav-item nav-link @yield('contact') mr-4">Hubungi Kami</a>
+            <a href="{{ route('home') }}" class="nav-item nav-link @yield ('home')">Beranda</a>
+            <a href="{{ route('kajian') }}" class="nav-item nav-link @yield ('study')">Kajian</a>
+            <a href="{{ route('contact') }}" class="nav-item nav-link @yield('contact') mr-4">Hubungi Kami</a>
             <div class="nav-item dropdown">
               <a href="#" class="nav-link dropdown-toggle @yield('edit') mr-4" data-toggle="dropdown">
                 Hai, {{ Auth::user()->name }}

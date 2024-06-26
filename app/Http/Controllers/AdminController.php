@@ -24,18 +24,8 @@ class AdminController extends Controller
             'nama' => 'required|string|max:255',
             'judul' => 'required|string|max:255',
             'deskripsi' => 'required|string',
-            'file' => 'nullable|file|mimes:pdf,doc,docx,txt|max:3048',
+            'file' => 'nullable|file|mimes:pdf,doc,docx,txt|max:30000',
         ]);
-        // $filePath = $request->file('file')->store('study_files');
-
-        // dd($request->all());
-
-        // Study::create([
-        //     'id' => $validatedData['category'],
-        //     'judul' => $validatedData['judul'],
-        //     'deskripsi' => $validatedData['deskripsi'],
-        //     'file' => $filePath,
-        // ]);
 
         // Simpan data kajian ke database
         $study = new Study();
@@ -46,7 +36,9 @@ class AdminController extends Controller
 
         // Simpan file
         if ($request->hasFile('file')) {
-            $filePath = $request->file('file')->store('study_files', 'public');
+            $file = $request->file('file');
+            $fileName = $file->getClientOriginalName();
+            $filePath = $file->storeAs('study_files',$fileName, 'public');
             $study->file = $filePath;
         }
         $study->save();

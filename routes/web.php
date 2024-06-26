@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudyController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\NavbarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,20 +39,24 @@ Route::middleware('auth', 'verified', 'role::user')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/home', function () {
-    return view('frontend.home');
-})->middleware(['auth', 'verified']);
+Route::get('/home', [NavbarController::class, 'home'])->middleware(['auth', 'verified'])->name('home');
+Route::get('/contact', [NavbarController::class, 'contact'])->middleware(['auth', 'verified'])->name('contact');
+
+// Route::get('/home', function () {
+//     return view('frontend.home');
+// })->middleware(['auth', 'verified']);
 
 Route::get('/study', [StudyController::class, 'kajian'])->middleware(['auth', 'verified'])->name('kajian');
 Route::get('/study/{id}', [StudyController::class, 'showkajian'])->middleware(['auth', 'verified'])->name('showkajian');
+Route::get('/download/{id}', [StudyController::class, 'download'])->middleware(['auth', 'verified'])->name('download');
 
 Route::get('/content', function () {
     return view('frontend.content');
 })->middleware(['auth', 'verified']);
 
-Route::get('/contact', function () {
-    return view('frontend.contact');
-})->middleware(['auth', 'verified']);
+// Route::get('/contact', function () {
+//     return view('frontend.contact');
+// })->middleware(['auth', 'verified']);
 
 // ROUTE ADMIN
 

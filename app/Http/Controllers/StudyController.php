@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Study;
+use Illuminate\Support\Facades\Storage;
 
 class StudyController extends Controller
 {
@@ -36,6 +37,22 @@ class StudyController extends Controller
 
     public function showkajian($id){
         $study = Study::with('category')->findOrFail($id);
-        return view('frontend.content', compact('study'));
+        // Mengambil related post berdasarkan kategori yang sama
+        $relatedStudies = Study::where('id_kategori', $study->id_kategori)
+                                ->where('id', '!=', $study->id)
+                                ->limit(5) // Batasi jumlah related post yang ditampilkan
+                                ->get();
+
+        return view('frontend.content', compact('study', 'relatedStudies'));
+    }
+
+    public function download($id){
+        $study = Study::FindOrFail($id);
+
+        if (!$study->file){
+            abort(404);
+        }
+        $filePath = 'public/' . $study->file;
+        return Storage::download($filePath);
     }
 }
